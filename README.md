@@ -87,7 +87,7 @@ curl -XGET -H "Content-type: application/json" 'https://d53se7r9mj.execute-api.u
 *UPDATE*
 
 ```bash
-curl -XPUT -H "Content-type: application/json" -d '{ "first_name" : "William","last_name" : "Smith" , "contact_number":"8826358821"}' 'd53se7r9mj.execute-api.us-east-1.amazonaws.com/dev/user/2cf53d00-75fb-11e7-aef3-395a318c46d6'
+curl -XPUT -H "Content-type: application/json" -d '{ "first_name" : "William","last_name" : "Smith" , "contact_number":"8826358821"}' 'https://d53se7r9mj.execute-api.us-east-1.amazonaws.com/dev/user/2cf53d00-75fb-11e7-aef3-395a318c46d6'
 ```
 ```json
 {
