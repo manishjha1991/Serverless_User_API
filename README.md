@@ -1,4 +1,4 @@
-# Serverless MongoDB Rest API with Mongoose and Bluebird Promises
+# Serverless MongoDB Rest API with Mongodb Atlas 
 
 This example demonstrate how to use a MongoDB database with aws and serverless.
 
