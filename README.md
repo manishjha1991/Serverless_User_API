@@ -101,10 +101,12 @@ curl -XPUT -H "Content-type: application/json" -d '{ "first_name" : "William","l
       }
 }
 
+```
 *CHECKLOGIN*
 
 ```bash
 curl -XPOST -H "Content-type: application/json" -d '{"email_id" : "manish@xelpmoc.in","password" : "123456"}' 'https://d53se7r9mj.execute-api.us-east-1.amazonaws.com/dev/userCheck'
+
 ```
 
 ```json
