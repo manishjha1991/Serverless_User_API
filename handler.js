@@ -8,7 +8,7 @@ const assert = require('assert');
 const now = new Date();
 const bcrypt = require('bcrypt-nodejs');
 const salt = bcrypt.genSaltSync(6);
-const atlas_connection_uri = require('./libs/mongodb-lib.js').url;
+//const atlas_connection_uri = require('./libs/mongodb-lib.js').url;
 
 // GETS A SINGLE USER FROM THE DATABASE
 
@@ -16,7 +16,7 @@ module.exports.user = (event, context, callback) => {
 const id = event.pathParameters.id;
 context.callbackWaitsForEmptyEventLoop = false;
 if (id){
-   MongoClient.connect(atlas_connection_uri,(err, db) =>{
+   MongoClient.connect(process.env.atlas_connection_uri,(err, db) =>{
    assert.equal(null, err);
 	 try{
 		db.collection('users').findOne({user_id:id},(error, result) => {

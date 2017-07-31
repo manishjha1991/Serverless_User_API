@@ -3,6 +3,10 @@ service: aws-node-rest-api-mongodb
 provider:
   name: aws
   runtime: nodejs6.10
+  stage: prod
+  region: us-east-1
+  environment:
+    atlas_connection_uri: mongodb://admin:admin@serverless-shard-00-00-ahez6.mongodb.net:27017,serverless-shard-00-01-ahez6.mongodb.net:27017,serverless-shard-00-02-ahez6.mongodb.net:27017/practiceserverless?ssl=true&replicaSet=serverless-shard-0&authSource=admin
 
 functions:
   createUser:
