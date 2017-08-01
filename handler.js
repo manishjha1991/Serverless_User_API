@@ -72,7 +72,7 @@ module.exports.createUser = (event, context, callback) => {
     ]
 };
 context.callbackWaitsForEmptyEventLoop = false;
-MongoClient.connect(atlas_connection_uri, {native_parser:true},(err, db) =>{
+MongoClient.connect(process.env.atlas_connection_uri, {native_parser:true},(err, db) =>{
 assert.equal(null, err);
     try{
 		 db.collection('users').findOne({email_id:data.email_id},{email_id:1,_id:0},(err,result)=>{
@@ -105,7 +105,7 @@ assert.equal(null, err);
 module.exports.checkLogin = (event, context, callback) => {
 const data = JSON.parse(event.body);
 context.callbackWaitsForEmptyEventLoop = false;
-MongoClient.connect(atlas_connection_uri,{native_parser:true},(err, db) => {
+MongoClient.connect(process.env.atlas_connection_uri,{native_parser:true},(err, db) => {
     assert.equal(null,err);
      db.collection('users').findOne({email_id:data.email_id},{password:1,user_id:1},{upsert:false},(err, result) => {
       if (err) callback(null, { statusCode: 500, body: JSON.stringify(err)});
@@ -135,7 +135,7 @@ module.exports.deleteUser = (event, context, callback) => {
       const id = event.pathParameters.id;
       context.callbackWaitsForEmptyEventLoop = false;
       if (id){
-        MongoClient.connect(atlas_connection_uri,(err, db) => {
+        MongoClient.connect(process.env.atlas_connection_uri,(err, db) => {
         assert.equal(null, err);
         try{
           db.collection('users').remove({user_id:id},(error, result) =>{
@@ -162,7 +162,7 @@ module.exports.updateUser = (event, context, callback) => {
   const data = JSON.parse(event.body);
   const id = event.pathParameters.id;
     if (id){
-        MongoClient.connect(atlas_connection_uri, function (err, db) {
+        MongoClient.connect(process.env.atlas_connection_uri, function (err, db) {
         assert.equal(null, err);
         try{
           db.collection('users').update({user_id:id},{ $set:data},{upsert:false},(error, result) =>{
