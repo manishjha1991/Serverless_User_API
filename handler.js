@@ -105,7 +105,7 @@ assert.equal(null, err);
 module.exports.checkLogin = (event, context, callback) => {
 const data = JSON.parse(event.body);
 context.callbackWaitsForEmptyEventLoop = false;
-MongoClient.connect(process.env.atlas_connection_uri,{native_parser:true},(err, db) => {
+MongoClient.connect(process.env.atlas_connection_uri, {native_parser:true},(err, db) => {
     assert.equal(null,err);
      db.collection('users').findOne({email_id:data.email_id},{password:1,user_id:1},{upsert:false},(err, result) => {
       if (err) callback(null, { statusCode: 500, body: JSON.stringify(err)});

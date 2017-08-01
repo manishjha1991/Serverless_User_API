@@ -24,7 +24,7 @@ In `handler.js` update the `atlas_connection_uri` with your mongoDB Atlas connec
 ```bash
 curl -XPOST -H "Content-type: application/json" 
 -d '{"first_name" : "Manish","last_name" : "Jha","email_id" : "jha@xelpmoc.in","contact_number" : "9555137014","image_url":"","test_flag":false,"password":"123456","description":"Hello Serverless","label":"SH-12","response":"DisAgree"}'
-'https://d53se7r9mj.execute-api.us-east-1.amazonaws.com/dev/user'
+'https://d76d5bpwmh.execute-api.us-east-1.amazonaws.com/prod/user'
 ```
 ```json
 {
@@ -87,7 +87,7 @@ curl -XGET -H "Content-type: application/json" 'https://d53se7r9mj.execute-api.u
 *UPDATE*
 
 ```bash
-curl -XPUT -H "Content-type: application/json" -d '{ "first_name" : "William","last_name" : "Smith" , "contact_number":"8826358821"}' 'https://d53se7r9mj.execute-api.us-east-1.amazonaws.com/dev/user/2cf53d00-75fb-11e7-aef3-395a318c46d6'
+curl -XPUT -H "Content-type: application/json" -d '{ "first_name" : "William","last_name" : "Smith" , "contact_number":"8826358821"}' 'https://d76d5bpwmh.execute-api.us-east-1.amazonaws.com/prod/user/2cf53d00-75fb-11e7-aef3-395a318c46d6'
 ```
 ```json
 {
@@ -105,7 +105,7 @@ curl -XPUT -H "Content-type: application/json" -d '{ "first_name" : "William","l
 *CHECKLOGIN*
 
 ```bash
-curl -XPOST -H "Content-type: application/json" -d '{"email_id" : "manish@xelpmoc.in","password" : "123456"}' 'https://d53se7r9mj.execute-api.us-east-1.amazonaws.com/dev/userCheck'
+curl -XPOST -H "Content-type: application/json" -d '{"email_id" : "manish@xelpmoc.in","password" : "123456"}' 'https://d76d5bpwmh.execute-api.us-east-1.amazonaws.com/prod/userCheck'
 
 ```
 
@@ -142,7 +142,7 @@ curl -XPOST -H "Content-type: application/json" -d '{"email_id" : "manish@xelpmo
 *DELETE*
 
 ```bash
-curl -XDELETE -H "Content-type: application/json" 'https://d53se7r9mj.execute-api.us-east-1.amazonaws.com/dev/user/2cf53d00-75fb-11e7-aef3-395a318c46d6'
+curl -XDELETE -H "Content-type: application/json" 'https://d76d5bpwmh.execute-api.us-east-1.amazonaws.com/prod/user/2cf53d00-75fb-11e7-aef3-395a318c46d6'
 ```
 
 ```json
